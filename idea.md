@@ -11,9 +11,9 @@ Creating a database is simple: call the create script with some simple arguments
 ## Code structure
 
 createDB.php
-    - user can create a db by making a request like {query:"createTable", tablename:"tab1", columns:[{"cname":"tname", "type":"VARCHAR"},"amount",{cname:"year",type:"Integer"},"time1"]}
+    - user can create a db by making a request like {query:"createTable", tablename:"tab1", columns:[{"cname":"tname", "type":"VARCHAR"},"amount",{cname:"year",type:"Integer"},"time1"]} (columns default to VARCHAR type)
 writeData.php
-    - user can send a request like: {"query":"newRow", "tablename":"tab1", newdata:{cname:"tname",value:"NewName23"},{cname:"year",value:2019}} and a token
+    - user can send a request like: {"query":"newRow", "tablename":"tab1", newdata:{cname:"tname",value:"NewName23"},{cname:"year",value:2019}} and a token 
     - user can also send a list in newdata
     - the script replies either with success or with an informative error like "token not valid", or "tab1 is not a table"
 getData.php
