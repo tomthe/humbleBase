@@ -37,8 +37,19 @@ try {
         exit;
     }
 
+    $page = isset($input['page']) ? max(1, intval($input['page'])) : 1;
+    $limit = isset($input['limit']) ? min(10000, max(1, intval($input['limit']))) : 100;
+    $offset = ($page - 1) * $limit;
+
+    $orderBy = '';
+    if (isset($input['orderBy'])) {
+        $orderCol = preg_replace('/[^a-zA-Z0-9_]/', '', $input['orderBy']);
+        $orderDir = isset($input['orderDir']) && strtoupper($input['orderDir']) === 'DESC' ? 'DESC' : 'ASC';
+        $orderBy = " ORDER BY $orderCol $orderDir";
+    }
+
     if ($input['query'] === 'getall') {
-        $result = $db->query("SELECT * FROM $tableName");
+        $result = $db->query("SELECT * FROM $tableName$orderBy LIMIT $limit OFFSET $offset");
     } elseif ($input['query'] === 'getwhere') {
         if (!isset($input['where'])) {
             $db->close();
@@ -47,7 +58,7 @@ try {
         }
         $where = $db->escapeString($input['where']);
         $columns = isset($input['columns']) ? implode(', ', array_map(function($col) { return preg_replace('/[^a-zA-Z0-9_]/', '', $col); }, $input['columns'])) : '*';
-        $result = $db->query("SELECT $columns FROM $tableName WHERE $where");
+        $result = $db->query("SELECT $columns FROM $tableName WHERE $where$orderBy LIMIT $limit OFFSET $offset");
     } else {
         $db->close();
         echo json_encode(['error' => 'Invalid query type']);
@@ -59,8 +70,23 @@ try {
         $data[] = $row;
     }
 
+    $countQuery = $input['query'] === 'getall' 
+        ? "SELECT COUNT(*) as count FROM $tableName"
+        : "SELECT COUNT(*) as count FROM $tableName WHERE $where";
+    $totalItems = $db->querySingle($countQuery);
+    $totalPages = ceil($totalItems / $limit);
+
     $db->close();
-    echo json_encode(['success' => true, 'data' => $data]);
+    echo json_encode([
+        'success' => true, 
+        'data' => $data,
+        'pagination' => [
+            'page' => $page,
+            'limit' => $limit,
+            'total' => $totalItems,
+            'totalPages' => $totalPages
+        ]
+    ]);
 
 } catch (Exception $e) {
     if (isset($db)) {
