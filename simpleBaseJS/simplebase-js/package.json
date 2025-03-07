@@ -1,0 +1,30 @@
+{
+  "name": "simplebase-js",
+  "version": "1.0.0",
+  "description": "A JavaScript library for simplifying the use of SimpleBase, providing functions for database operations and UI components.",
+  "main": "dist/simplebase.js",
+  "module": "dist/simplebase.min.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "simplebase",
+    "javascript",
+    "library",
+    "database",
+    "sqlite"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "rollup": "^2.56.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "eslint": "^7.32.0",
+    "jest": "^27.4.5"
+  }
+}

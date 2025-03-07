@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleBase Advanced Example</title>
+    <script src="../../dist/simplebase.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #share-ui {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SimpleBase Advanced Example</h1>
+    <div id="share-ui"></div>
+    <div id="response"></div>
+
+    <script>
+        // Initialize the SimpleBase library
+        const token = SimpleBase.getToken();
+        SimpleBase.ui.share.showShareUI(document.getElementById('share-ui'));
+
+        // Example usage of SimpleBase functions
+        async function setupDatabase() {
+            await SimpleBase.database.createTable('users', [
+                { cname: 'name', type: 'VARCHAR' },
+                { cname: 'age', type: 'INTEGER' }
+            ]);
+            await SimpleBase.database.writeData('users', [
+                { cname: 'name', value: 'John' },
+                { cname: 'age', value: 30 }
+            ]);
+            const data = await SimpleBase.database.getData('users');
+            document.getElementById('response').textContent = JSON.stringify(data, null, 2);
+        }
+
+        setupDatabase();
+    </script>
+</body>
+</html>
