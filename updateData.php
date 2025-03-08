@@ -30,6 +30,10 @@ try {
     $db = new SQLite3($dbPath);
     $db->busyTimeout(5000);
 
+    if (!$db) {
+        throw new Exception('Failed to initialize SQLite3 object');
+    }
+
     $tableCheck = $db->querySingle("SELECT name FROM sqlite_master WHERE type='table' AND name='$tableName'");
     if (!$tableCheck) {
         $db->close();
@@ -54,20 +58,27 @@ try {
     }
 
     $updateQuery = "UPDATE $tableName SET " . implode(', ', $setParts) . " WHERE $where";
+    
+    // Log the query for debugging
+    error_log("Executing query: $updateQuery");
+
     $result = $db->exec($updateQuery);
 
+    if ($result === false) {
+        throw new Exception($db->lastErrorMsg());
+    }
+
+    $rowsAffected = $db->changes();
     $db->close();
 
-    if ($result) {
-        echo json_encode(['success' => true, 'message' => 'Data updated successfully', 'rows_affected' => $db->changes()]);
-    } else {
-        echo json_encode(['error' => 'Failed to update data']);
-    }
+    echo json_encode(['success' => true, 'message' => 'Data updated successfully', 'rows_affected' => $rowsAffected]);
 
 } catch (Exception $e) {
-    if (isset($db)) {
+    if (isset($db) && $db instanceof SQLite3) {
         $db->close();
     }
+    // Log the error for debugging
+    error_log("Update failed: " . $e->getMessage());
     echo json_encode(['error' => 'Update failed: ' . $e->getMessage()]);
 }
 ?>
