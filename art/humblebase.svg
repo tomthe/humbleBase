@@ -1,0 +1,43 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Database -->
+  <ellipse cx="100" cy="160" rx="50" ry="15" fill="#4a6fa5" stroke="#333" stroke-width="2" />
+  <rect x="50" y="120" width="100" height="40" fill="#4a6fa5" stroke="#333" stroke-width="0" />
+  <ellipse cx="100" cy="120" rx="50" ry="15" fill="#5d84c4" stroke="#333" stroke-width="2" />
+  
+  <!-- Database details -->
+  <!-- <line x1="65" y1="135" x2="135" y2="135" stroke="#333" stroke-width="1" opacity="0.5" />
+  <line x1="65" y1="145" x2="135" y2="145" stroke="#333" stroke-width="1" opacity="0.5" /> -->
+  
+  <!-- Bee body -->
+  <ellipse cx="100" cy="65" rx="25" ry="18" fill="#ffd700" stroke="#333" stroke-width="2" />
+  
+  <!-- Bee stripes -->
+  <rect x="80" y="56" width="40" height="7" fill="#333" />
+  <rect x="80" y="68" width="40" height="7" fill="#333" />
+  
+  <!-- Bee wings -->
+  <ellipse cx="85" cy="50" rx="15" ry="10" fill="#fff" stroke="#333" stroke-width="1" opacity="0.7" transform="rotate(-20, 85, 50)" />
+  <ellipse cx="115" cy="50" rx="15" ry="10" fill="#fff" stroke="#333" stroke-width="1" opacity="0.7" transform="rotate(20, 115, 50)" />
+  
+  <!-- Bee head -->
+  <circle cx="75" cy="63" r="10" fill="#333" />
+  
+  <!-- Bee eyes -->
+  <circle cx="72" cy="60" r="2" fill="white" />
+  <circle cx="78" cy="60" r="2" fill="white" />
+  
+  <!-- Antennae -->
+  <line x1="70" y1="55" x2="65" y2="45" stroke="#333" stroke-width="1.5" />
+  <line x1="80" y1="55" x2="85" y2="45" stroke="#333" stroke-width="1.5" />
+  
+  <!-- Stinger -->
+  <path d="M125 65 L135 65" stroke="#333" stroke-width="2" />
+  
+  <!-- Legs -->
+  <path d="M90 78 Q100 90 110 78" stroke="#333" stroke-width="1.5" fill="transparent" />
+  <path d="M85 75 Q75 85 65 78" stroke="#333" stroke-width="1.5" fill="transparent" />
+  <path d="M115 75 Q125 85 135 78" stroke="#333" stroke-width="1.5" fill="transparent" />
+  
+  <!-- Motion lines -->
+  <!-- <path d="M70 95 Q100 105 130 95" stroke="#333" stroke-width="1" fill="transparent" stroke-dasharray="2,2" /> -->
+</svg>
