@@ -1,5 +1,12 @@
-// filepath: /simplebase-js/simplebase-js/src/core/api.js
-const BASE_URL = 'http://localhost'; // Adjust based on your server
+let BASE_URL = 'http://localhost'; // Default value, can be modified
+
+/**
+ * Sets the base URL for API calls
+ * @param {string} url - The base URL to use for all API requests
+ */
+function setBaseUrl(url) {
+    BASE_URL = url;
+}
 
 async function apiCall(script, data) {
     try {
@@ -15,4 +22,4 @@ async function apiCall(script, data) {
     }
 }
 
-export { apiCall };
+export { apiCall, setBaseUrl };
