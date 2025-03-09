@@ -1,4 +1,4 @@
-// filepath: /simplebase-js/simplebase-js/src/core/database.js
+// filepath: /humbleBase-js/humbleBase-js/src/core/database.js
 import { apiCall } from './api.js';
 
 export function createTable(token, tablename, columns) {

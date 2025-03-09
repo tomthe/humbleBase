@@ -6,15 +6,15 @@ export default {
     input: 'src/index.js',
     output: [
         {
-            file: 'dist/simplebase.js',
+            file: 'dist/humbleBase.js',
             format: 'umd',
-            name: 'SimpleBase',
+            name: 'humbleBase',
             sourcemap: true,
         },
         {
-            file: 'dist/simplebase.min.js',
+            file: 'dist/humbleBase.min.js',
             format: 'umd',
-            name: 'SimpleBase',
+            name: 'humbleBase',
             plugins: [terser()],
             sourcemap: true,
         },

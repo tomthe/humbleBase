@@ -1,4 +1,4 @@
-# SimpleBase idea
+# humbleBase idea
 This project's goal is to build a universal backend with PHP, SQLite.
 Developers can put this on a shared hosting and only need to configure it from the frontend.
 

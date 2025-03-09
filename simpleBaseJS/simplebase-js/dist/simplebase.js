@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.SimpleBase = {}));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.humbleBase = {}));
 })(this, (function (exports) { 'use strict';
 
     let BASE_URL = 'http://localhost'; // Default value, can be modified
@@ -28,12 +28,12 @@
         }
     }
 
-    // filepath: /simplebase-js/simplebase-js/src/core/token.js
+    // filepath: /humbleBase-js/humbleBase-js/src/core/token.js
     function createToken() {
         return Math.random().toString(36).substr(2, 10);
     }
 
-    // filepath: /simplebase-js/simplebase-js/src/core/database.js
+    // filepath: /humbleBase-js/humbleBase-js/src/core/database.js
 
     function createTable(token, tablename, columns) {
         const data = {
@@ -72,14 +72,14 @@
     }
 
     function saveToken(token) {
-        localStorage.setItem('simplebase_token', token);
+        localStorage.setItem('humbleBase_token', token);
     }
 
     function getToken() {
-        return localStorage.getItem('simplebase_token');
+        return localStorage.getItem('humbleBase_token');
     }
 
-    // filepath: /simplebase-js/simplebase-js/src/ui/share.js
+    // filepath: /humbleBase-js/humbleBase-js/src/ui/share.js
 
     function createShareUI() {
         const container = document.createElement('div');
@@ -148,4 +148,4 @@
     Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
-//# sourceMappingURL=simplebase.js.map
+//# sourceMappingURL=humbleBase.js.map

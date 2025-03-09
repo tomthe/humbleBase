@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimpleBase Advanced Example</title>
-    <script src="../../dist/simplebase.js"></script>
+    <title>humbleBase Advanced Example</title>
+    <script src="../../dist/humbleBase.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,26 +16,26 @@
     </style>
 </head>
 <body>
-    <h1>SimpleBase Advanced Example</h1>
+    <h1>humbleBase Advanced Example</h1>
     <div id="share-ui"></div>
     <div id="response"></div>
 
     <script>
-        // Initialize the SimpleBase library
-        const token = SimpleBase.getToken();
-        SimpleBase.ui.share.showShareUI(document.getElementById('share-ui'));
+        // Initialize the humbleBase library
+        const token = humbleBase.getToken();
+        humbleBase.ui.share.showShareUI(document.getElementById('share-ui'));
 
-        // Example usage of SimpleBase functions
+        // Example usage of humbleBase functions
         async function setupDatabase() {
-            await SimpleBase.database.createTable('users', [
+            await humbleBase.database.createTable('users', [
                 { cname: 'name', type: 'VARCHAR' },
                 { cname: 'age', type: 'INTEGER' }
             ]);
-            await SimpleBase.database.writeData('users', [
+            await humbleBase.database.writeData('users', [
                 { cname: 'name', value: 'John' },
                 { cname: 'age', value: 30 }
             ]);
-            const data = await SimpleBase.database.getData('users');
+            const data = await humbleBase.database.getData('users');
             document.getElementById('response').textContent = JSON.stringify(data, null, 2);
         }
 

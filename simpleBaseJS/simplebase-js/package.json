@@ -1,16 +1,16 @@
 {
-  "name": "simplebase-js",
+  "name": "humbleBase-js",
   "version": "1.0.0",
-  "description": "A JavaScript library for simplifying the use of SimpleBase, providing functions for database operations and UI components.",
-  "main": "dist/simplebase.js",
-  "module": "dist/simplebase.min.js",
+  "description": "A JavaScript library for simplifying the use of humbleBase, providing functions for database operations and UI components.",
+  "main": "dist/humbleBase.js",
+  "module": "dist/humbleBase.min.js",
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
     "lint": "eslint ."
   },
   "keywords": [
-    "simplebase",
+    "humbleBase",
     "javascript",
     "library",
     "database",

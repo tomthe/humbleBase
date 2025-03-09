@@ -2,7 +2,7 @@ import { createTable, writeData, getData, updateData } from '../src/core/databas
 import { createToken } from '../src/core/token';
 import { saveToken, getToken } from '../src/utils/storage';
 
-describe('SimpleBase Core Functions', () => {
+describe('humbleBase Core Functions', () => {
     let token;
 
     beforeEach(() => {

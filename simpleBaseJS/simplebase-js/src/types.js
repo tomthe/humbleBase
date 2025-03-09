@@ -1,4 +1,4 @@
-// filepath: /simplebase-js/simplebase-js/src/types.js
+// filepath: /humbleBase-js/humbleBase-js/src/types.js
 export interface Token {
     value: string;
     createdAt: Date;

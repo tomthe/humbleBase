@@ -1,4 +1,4 @@
-// filepath: /simplebase-js/simplebase-js/src/ui/components.js
+// filepath: /humbleBase-js/humbleBase-js/src/ui/components.js
 export function createButton(label, onClick) {
     const button = document.createElement('button');
     button.textContent = label;

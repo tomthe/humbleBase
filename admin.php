@@ -124,7 +124,7 @@ try {
     <!DOCTYPE html>
     <html>
     <head>
-        <title>SimpleBase Admin - <?php echo htmlentities($token); ?></title>
+        <title>humbleBase Admin - <?php echo htmlentities($token); ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; color: #333; }
@@ -172,7 +172,7 @@ try {
         </style>
     </head>
     <body>
-        <h1>SimpleBase Admin: <?php echo htmlentities($token); ?></h1>
+        <h1>humbleBase Admin: <?php echo htmlentities($token); ?></h1>
         
         <?php if (!empty($message)): ?>
         <div class="message"><?php echo htmlentities($message); ?></div>

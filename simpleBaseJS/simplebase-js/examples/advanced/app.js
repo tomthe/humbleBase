@@ -1,4 +1,4 @@
-// filepath: /simplebase-js/simplebase-js/examples/advanced/app.js
+// filepath: /humbleBase-js/humbleBase-js/examples/advanced/app.js
 import { createToken } from '../../src/core/token.js';
 import { createTable, writeData, getData, updateData } from '../../src/core/database.js';
 import { saveToken, getToken } from '../../src/utils/storage.js';

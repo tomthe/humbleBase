@@ -1,27 +1,27 @@
-# SimpleBase JavaScript Library
+# humbleBase JavaScript Library
 
-SimpleBase is a lightweight JavaScript library designed to simplify interactions with the SimpleBase backend, which utilizes PHP and SQLite. This library provides a straightforward API for creating databases, managing data, and sharing access through a minimal user interface.
+humbleBase is a lightweight JavaScript library designed to simplify interactions with the humbleBase backend, which utilizes PHP and SQLite. This library provides a straightforward API for creating databases, managing data, and sharing access through a minimal user interface.
 
 ## Features
 
 - **Token Management**: Automatically generates and manages random tokens for secure access to the backend.
-- **Database Operations**: Easily create tables, write data, retrieve data, and update records in your SimpleBase database.
+- **Database Operations**: Easily create tables, write data, retrieve data, and update records in your humbleBase database.
 - **User Interface**: Includes a minimal UI for sharing URLs and entering tokens, enhancing user experience.
 - **Local Storage**: Automatically saves tokens to local storage for persistent access.
 - **Validation**: Ensures that user inputs are valid before making requests to the backend.
 
 ## Installation
 
-To use the SimpleBase library, include the `simplebase.js` or `simplebase.min.js` file in your project:
+To use the humbleBase library, include the `humbleBase.js` or `humbleBase.min.js` file in your project:
 
 ```html
-<script src="path/to/simplebase.min.js"></script>
+<script src="path/to/humbleBase.min.js"></script>
 ```
 
 Alternatively, you can install it via npm:
 
 ```bash
-npm install simplebase-js
+npm install humbleBase-js
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ npm install simplebase-js
 To generate a random token, use the `createToken` function:
 
 ```javascript
-import { createToken } from 'simplebase-js/src/core/token';
+import { createToken } from 'humbleBase-js/src/core/token';
 
 const token = createToken();
 console.log(token);
@@ -42,7 +42,7 @@ console.log(token);
 To create a new table in your database:
 
 ```javascript
-import { createTable } from 'simplebase-js/src/core/database';
+import { createTable } from 'humbleBase-js/src/core/database';
 
 createTable('users', [
     { cname: 'name', type: 'VARCHAR' },
@@ -55,7 +55,7 @@ createTable('users', [
 To add a new row to a table:
 
 ```javascript
-import { writeData } from 'simplebase-js/src/core/database';
+import { writeData } from 'humbleBase-js/src/core/database';
 
 writeData('users', [
     { cname: 'name', value: 'John' },
@@ -68,7 +68,7 @@ writeData('users', [
 To get all data from a table:
 
 ```javascript
-import { getData } from 'simplebase-js/src/core/database';
+import { getData } from 'humbleBase-js/src/core/database';
 
 getData('users');
 ```
@@ -78,7 +78,7 @@ getData('users');
 To update a specific record in a table:
 
 ```javascript
-import { updateData } from 'simplebase-js/src/core/database';
+import { updateData } from 'humbleBase-js/src/core/database';
 
 updateData('users', 'name="John"', { cname: 'age', value: 31 });
 ```
@@ -88,7 +88,7 @@ updateData('users', 'name="John"', { cname: 'age', value: 31 });
 To display a minimal UI for sharing the URL with the token:
 
 ```javascript
-import { displayShareUI } from 'simplebase-js/src/ui/share';
+import { displayShareUI } from 'humbleBase-js/src/ui/share';
 
 displayShareUI();
 ```

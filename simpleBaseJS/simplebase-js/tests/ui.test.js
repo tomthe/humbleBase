@@ -3,7 +3,7 @@ import { saveToken, getToken } from '../src/utils/storage.js';
 import { createTable, writeData, getData, updateData } from '../src/core/database.js';
 import { displayShareUI } from '../src/ui/share.js';
 
-describe('SimpleBase UI Tests', () => {
+describe('humbleBase UI Tests', () => {
     beforeEach(() => {
         localStorage.clear();
     });

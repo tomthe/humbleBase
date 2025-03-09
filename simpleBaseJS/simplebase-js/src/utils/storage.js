@@ -1,11 +1,11 @@
 export function saveToken(token) {
-    localStorage.setItem('simplebase_token', token);
+    localStorage.setItem('humbleBase_token', token);
 }
 
 export function getToken() {
-    return localStorage.getItem('simplebase_token');
+    return localStorage.getItem('humbleBase_token');
 }
 
 export function clearToken() {
-    localStorage.removeItem('simplebase_token');
+    localStorage.removeItem('humbleBase_token');
 }

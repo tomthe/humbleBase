@@ -1,4 +1,4 @@
-// filepath: /simplebase-js/simplebase-js/src/ui/share.js
+// filepath: /humbleBase-js/humbleBase-js/src/ui/share.js
 import { saveToken } from '../utils/storage.js';
 import { createToken } from '../core/token.js';
 
